@@ -1,0 +1,334 @@
+/* ===== BASE GENERAL (INDEX) ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+body {
+    background: #fcfcfc;
+    color: #37474F;
+    /* Color de texto principal */
+    line-height: 1.6;
+}
+
+/* ===== HEADER ===== */
+.header {
+    background: #37474F;
+    /* Color industrial/tema */
+    color: white;
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header h1 {
+    font-size: 1.9rem;
+    font-weight: 800;
+    color: #FF5733;
+    /* Color de alerta/acento */
+}
+
+.nav-links {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #CFD8DC;
+    /* Gris claro en fondo oscuro */
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #FF5733;
+}
+
+/* Botones dentro del header */
+.btn-dashboard,
+.btn-login {
+    background: #1E88E5;
+    /* Azul para acciones operativas */
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+.btn-dashboard:hover,
+.btn-login:hover {
+    background: #1565C0;
+    color: white;
+}
+
+.btn-logout {
+    background: #E64A19;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* ===== HERO (Página de Aterrizaje) ===== */
+.hero {
+    position: relative;
+    text-align: center;
+    padding: 150px 20px 80px;
+    min-height: 550px;
+    color: white;
+}
+
+.hero--industrial {
+    /* Imagen genérica industrial */
+    background: url('https://images.unsplash.com/photo-1518281358327-1422d2514578?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+}
+
+.hero-visual-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(30, 40, 45, 0.75);
+    /* Overlay oscuro industrial */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    max-width: 900px;
+    margin: 0 auto;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
+}
+
+.hero-title {
+    font-size: 3.2rem;
+    font-weight: 900;
+    margin-bottom: 20px;
+}
+
+.hero-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+}
+
+/* ===== HERO BOTONES ===== */
+.hero-btn {
+    display: inline-block;
+    padding: 12px 35px;
+    border-radius: 5px;
+    /* Estilo cuadrado industrial */
+    font-weight: 600;
+    transition: all 0.3s;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.hero-btn--primary {
+    background: #FF5733;
+    /* Color de alerta */
+    color: white;
+}
+
+.hero-btn--primary:hover {
+    background: #E64A19;
+    transform: translateY(-2px);
+}
+
+.hero-btn--secondary {
+    border: 2px solid white;
+    color: white;
+}
+
+.hero-btn--secondary:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+}
+
+/* ===== ESTADÍSTICAS (Adaptado a ThermoWatch) ===== */
+.stats-grid-wrapper {
+    margin-top: -50px;
+    position: relative;
+    z-index: 10;
+}
+
+.stats-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    background: white;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.stat-card {
+    text-align: center;
+    min-width: 150px;
+}
+
+.stat-icon {
+    font-size: 2.3rem;
+    color: #1E88E5;
+    /* Azul para métricas y datos */
+}
+
+/* Sobreescribir iconos específicos de tu HTML (si usaste text-red-600, etc.) */
+.text-teal-600 {
+    color: #1E88E5;
+}
+
+.text-green-600 {
+    color: #4CAF50;
+}
+
+.text-yellow-600 {
+    color: #FFC107;
+}
+
+.text-red-600 {
+    color: #FF5733;
+}
+
+
+.stat-number {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #FF5733;
+    /* Usamos alerta/fuego para el número */
+}
+
+.stat-label {
+    color: #546E7A;
+}
+
+/* ===== SECCIONES PRINCIPALES ===== */
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    color: #37474F;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.section-title::after {
+    content: "";
+    display: block;
+    width: 70px;
+    height: 4px;
+    background: #FF5733;
+    /* Subrayado de alerta */
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* ===== FEATURE CARDS (Soluciones/Tecnología) ===== */
+.feature-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.feature-card {
+    background: white;
+    border-radius: 10px;
+    padding: 30px;
+    border-top: 6px solid #1E88E5;
+    /* Azul para énfasis tecnológico */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-6px);
+}
+
+.feature-card h3 {
+    color: #1E88E5;
+    margin-bottom: 15px;
+}
+
+/* (Adaptar lista de tu compañero si aplica) */
+.feature-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.feature-card li {
+    margin-bottom: 10px;
+    color: #546E7A;
+}
+
+.feature-card li::before {
+    content: "✓ ";
+    color: #FF5733;
+}
+
+
+/* ===== FOOTER ===== */
+.footer {
+    background: #37474F;
+    /* Color oscuro industrial */
+    color: #CFD8DC;
+    text-align: center;
+    padding: 25px;
+    margin-top: 40px;
+}
+
+/* === 🔔 Banner de conexión/desconexión (Adaptado a tus colores) === */
+.connection-banner {
+    position: fixed;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    z-index: 9999;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.connection-banner.online {
+    background-color: #4CAF50;
+    /* Verde de éxito */
+    color: #ffffff;
+}
+
+.connection-banner.offline {
+    background-color: #FF5733;
+    /* Rojo/Naranja de alerta */
+    color: #ffffff;
+}
+
+.connection-banner.hidden {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+    pointer-events: none;
+}

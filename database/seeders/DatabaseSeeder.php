@@ -21,5 +21,10 @@ class DatabaseSeeder extends Seeder
             'name' => 'Test User',
             'email' => 'test@example.com',
         ]);
+
+        // Seeders de Autenticación (Usuarios y Roles)
+        $this->call([
+            UserSeeder::class, // Debe ejecutarse primero para crear los usuarios
+        ]);
     }
 }

@@ -1,0 +1,156 @@
+/*
+ * Hoja de Estilos Unificada para Login y Registro
+ * Ubicación: public/styles/authloginregister.css
+ * Tema: ThermoWatch (Industrial/Alerta)
+ */
+
+/* ===== 1. Estilos Globales y Contenedor Principal (Body) ===== */
+* {
+    font-family: "Roboto", sans-serif;
+    /* Usamos una fuente más "ingenieril" */
+    box-sizing: border-box;
+}
+
+body {
+    /* Fondo limpio e industrial, basado en tu manifest */
+    background-color: #ECEFF1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.auth-card {
+    /* Estilo de la caja central */
+    background: #ffffff;
+    padding: 35px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    border-top: 5px solid #FF5733;
+    /* Borde temático de alerta */
+}
+
+/* ===== 2. Encabezado y Grupos de Entrada ===== */
+.auth-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.auth-header h2 {
+    font-size: 1.7rem;
+    color: #37474F;
+    /* Color primario oscuro */
+    margin-top: 10px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+/* Estilo para inputs (Correo, Contraseña, Nombre) */
+input[type="email"],
+input[type="password"],
+input[type="text"],
+select {
+    /* Agregamos el selector para el rol */
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #CFD8DC;
+    /* Borde gris claro */
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: #FF5733;
+    /* Borde de alerta al enfocar */
+    box-shadow: 0 0 0 3px rgba(255, 87, 51, 0.2);
+}
+
+/* ===== 3. Botones y Enlaces (Estilo ThermoWatch) ===== */
+.btn-primary {
+    background: #FF5733;
+    /* Color principal de alerta */
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(255, 87, 51, 0.3);
+    width: 100%;
+}
+
+.btn-primary:hover {
+    background: #E64A19;
+    transform: translateY(-1px);
+}
+
+.auth-link {
+    color: #1E88E5;
+    /* Enlaces en azul para contraste (datos/operación) */
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.auth-link:hover {
+    text-decoration: underline;
+}
+
+/* ===== 4. Estilos de Validación y Checklist ===== */
+.password-checklist {
+    text-align: left;
+    margin: 10px 0 20px 0;
+    padding: 10px;
+    background: #f7f7f7;
+    border-radius: 8px;
+}
+
+.password-checklist ul {
+    list-style: none;
+    padding-left: 0;
+    font-size: 0.9rem;
+}
+
+.password-checklist li {
+    margin: 5px 0;
+    color: #546E7A;
+    /* Gris oscuro industrial */
+}
+
+/* Estilos de mensaje de error/estado */
+.text-danger {
+    color: #D32F2F;
+    /* Rojo de error */
+    margin-top: 10px;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+/* Boton de Volver a Inicio */
+.btn-secondary {
+    background: #ffffff;
+    color: #546E7A;
+    padding: 10px 20px;
+    border: 1px solid #CFD8DC;
+    border-radius: 5px;
+    font-weight: 500;
+    cursor: pointer;
+    display: inline-block;
+    width: 100%;
+    margin-top: 15px;
+    text-align: center;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.btn-secondary:hover {
+    background: #ECEFF1;
+}

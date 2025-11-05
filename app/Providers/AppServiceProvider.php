@@ -2,10 +2,13 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\ServiceProvider;
+use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
+use Illuminate\Support\Facades\Route;
 
 class AppServiceProvider extends ServiceProvider
 {
+    public const HOME = '/welcome';
+
     /**
      * Register any application services.
      */
@@ -15,10 +18,22 @@ class AppServiceProvider extends ServiceProvider
     }
 
     /**
-     * Bootstrap any application services.
+     * Define tus enlaces de modelo de ruta y configuraciones de ruta.
      */
     public function boot(): void
     {
-        //
+        // Registro del Middleware de Rol y Verified (Necesario para el web.php)
+        Route::aliasMiddleware('role', \App\Http\Middleware\RoleMiddleware::class);
+        Route::aliasMiddleware('verified', \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class);
+
+        // Rutas
+        $this->routes(function () {
+            Route::middleware('api')
+                ->prefix('api')
+                ->group(base_path('routes/api.php'));
+
+            Route::middleware('web')
+                ->group(base_path('routes/web.php'));
+        });
     }
 }
