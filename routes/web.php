@@ -34,6 +34,11 @@ Route::middleware(['auth', 'verified'])->group(function () {
     // Página de bienvenida unificada (dashboard)
     Route::get('/welcome', [HomeController::class, 'index'])->name('welcome');
 
+    // Página del juego UTSC Strikers
+    Route::get('/game', function () {
+        return view('game_page'); // Apunta a game_page.blade.php
+    })->name('game_page');
+
     // Rutas de Perfil (ProfileController)
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
